@@ -18,6 +18,7 @@ experience I recommend using Chicago95 theme for GTK applications.
 * Super + [ - focus on previous monitor  
 * Super + ] - focus on next monitor  
 * Super + j / k - increment / decrement master stacking
+* Super + h / l - resize master stack
 
 
 ### Global layout settings
