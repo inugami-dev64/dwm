@@ -20,6 +20,13 @@ experience I recommend using Chicago95 theme for GTK applications.
 * Super + j / k - increment / decrement master stacking
 
 
+### Global layout settings
+
+* Super + t - set stacking layout  
+* Super + y - set floating layout  
+* Super + u - set monocle layout  
+
+
 ### Floating window resizing
 
 Window resizing can be done using mouse by clicking Super and then dragging the window
@@ -51,4 +58,3 @@ Windows can be moved using Super + mouse dragging or via following shortcuts:
 * Super + f - open file manager (requires vifm)  
 * Super + p - open process manager (requires htop)
 * Super + s - new screenshot (requires xfce4-screenshooter)
-* 
