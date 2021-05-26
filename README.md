@@ -58,3 +58,8 @@ Windows can be moved using Super + mouse dragging or via following shortcuts:
 * Super + f - open file manager (requires vifm)  
 * Super + p - open process manager (requires htop)
 * Super + s - new screenshot (requires xfce4-screenshooter)
+
+
+## Building
+Make sure that Xlib headers are installed  
+`# make clean install`
