@@ -2,7 +2,7 @@
 
 This dwm build includes some additional patches and fonts. The color scheme 
 is made to be similar to classical Windows theme. For full AESTHETIC 
-experience I recommend using Chicago95 theme for GTK applications.
+experience I recommend using Chicago95 theme for GTK applications.  
 
 ![](demo.png)
 
