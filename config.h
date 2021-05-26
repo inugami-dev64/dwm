@@ -62,6 +62,7 @@ static const char *dmenucmd[]           = { "dmenu_run", NULL };
 static const char *termcmd[]            = { "st", NULL };
 static const char *web_browser[]        = { "firefox", NULL };
 static const char *vifm[]               = { "st", "-e", "vifm" };
+static const char *htop[]               = { "st", "-e", "htop" };
 static const char *screen_shooter[]     = { "xfce4-screenshooter", NULL };
 static const char *vol_down[]           = { "pamixer", "-d", "2", NULL};
 static const char *vol_up[]             = { "pamixer", "-i", "2", NULL};
@@ -72,6 +73,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,          spawn,              {.v = termcmd } },
 	{ MODKEY,           			XK_i,	            spawn,	            {.v = web_browser } },
     { MODKEY,                       XK_f,               spawn,              {.v = vifm } },
+    { MODKEY,                       XK_p,               spawn,              {.v = htop} },
 	{ MODKEY,			            XK_s,               spawn,	            {.v = screen_shooter } },
 	{ MODKEY,			            XK_period,          spawn,	            {.v = vol_up} },
 	{ MODKEY,			            XK_comma,           spawn,	            {.v = vol_down } },
@@ -82,16 +84,16 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,               incnmaster,         {.i = -1 } },
 
     /// Window resizing shortcuts
-    { MODKEY|ControlMask,           XK_h,               moveresize,         {.v = "0x 0y -25w 0h"} },
-    { MODKEY|ControlMask,           XK_j,               moveresize,         {.v = "0x 0y 0w 25h"} },
-    { MODKEY|ControlMask,           XK_k,               moveresize,         {.v = "0x 0y 0w -25h"} },
-    { MODKEY|ControlMask,           XK_l,               moveresize,         {.v = "0x 0y 25w 0h"} },
+    { MODKEY|ControlMask,           XK_h,               moveresize,         {.v = "0x 0y -40w 0h"} },
+    { MODKEY|ControlMask,           XK_j,               moveresize,         {.v = "0x 0y 0w 40h"} },
+    { MODKEY|ControlMask,           XK_k,               moveresize,         {.v = "0x 0y 0w -40h"} },
+    { MODKEY|ControlMask,           XK_l,               moveresize,         {.v = "0x 0y 40w 0h"} },
 
     /// Window moving shortcuts
-    { MODKEY|ShiftMask,             XK_h,               moveresize,         {.v = "-25x 0y 0w 0h"} },
-    { MODKEY|ShiftMask,             XK_j,               moveresize,         {.v = "0x 25y 0w 0h"} },
-    { MODKEY|ShiftMask,             XK_k,               moveresize,         {.v = "0x -25y 0w 0h"} },
-    { MODKEY|ShiftMask,             XK_l,               moveresize,         {.v = "25x 0y 0w 0h"} },
+    { MODKEY|ShiftMask,             XK_h,               moveresize,         {.v = "-40x 0y 0w 0h"} },
+    { MODKEY|ShiftMask,             XK_j,               moveresize,         {.v = "0x 40y 0w 0h"} },
+    { MODKEY|ShiftMask,             XK_k,               moveresize,         {.v = "0x -40y 0w 0h"} },
+    { MODKEY|ShiftMask,             XK_l,               moveresize,         {.v = "40x 0y 0w 0h"} },
 
 	{ MODKEY,                       XK_h,               setmfact,           {.f = -0.05} },
 	{ MODKEY,                       XK_l,               setmfact,           {.f = +0.05} },
@@ -118,3 +120,21 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                                   7)
 	TAGKEYS(                        XK_9,                                   8)
 };
+
+/* button definitions */
+/* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
+static Button buttons[] = {
+	/* click                event mask      button          function        argument */
+	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
+	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
+	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
+	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+	{ ClkTagBar,            0,              Button1,        view,           {0} },
+	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
+	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+};
+
