@@ -55,7 +55,7 @@ Windows can be moved using Super + mouse dragging or via following shortcuts:
 * Super + Comma - volume down (requires pamixer)  
 * Super + r - run program (requires dmenu)
 * Super + Shift + Enter - spawn new terminal window (requires st)  
-* Super + i - open webbrowser (requires Firefox)  
+* Super + i - open webbrowser (requires Pale Moon)  
 * Super + f - open file manager (requires vifm)  
 * Super + p - open process manager (requires htop)
 * Super + s - new screenshot (requires xfce4-screenshooter)
