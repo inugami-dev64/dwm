@@ -1,0 +1,11 @@
+#!/bin/sh
+get_date() {
+        date_info="$(date +%A) $(date +%Y/%m/%d)"
+        time_info="$(date +%H:%M)"
+        echo "$date_info $time_info"
+}
+
+while :; do
+        xsetroot -name "$(get_date)"
+        sleep 1m
+done
