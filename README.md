@@ -17,6 +17,8 @@ experience I recommend using Chicago95 theme for GTK applications.
 * Super + Shift + c - kill client
 * Super + [ - focus on previous monitor  
 * Super + ] - focus on next monitor  
+* Super + Shift + [ - move active window to previous monitor
+* Super + Shift + ] - move active window to next monitor
 * Super + j / k - increment / decrement master stacking
 * Super + h / l - resize master stack
 
