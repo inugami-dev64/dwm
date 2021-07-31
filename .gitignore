@@ -2,3 +2,6 @@
 *.o
 compile_commands.json
 dwm
+tags
+*.rej
+*.orig
