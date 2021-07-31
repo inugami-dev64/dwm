@@ -1,0 +1,15 @@
+#!/bin/sh
+get_date() {
+    date_info="$(date +%A) $(date +%Y/%m/%d)"
+    time_info="$(date +%H:%M)"
+    echo "$date_info $time_info"
+}
+
+get_bat() {
+    echo "BAT:$(cat /sys/class/power_supply/BAT0/capacity)%"
+}
+
+while :; do
+    xsetroot -name "$(get_date) | $(get_bat)"
+    sleep 1m
+done
