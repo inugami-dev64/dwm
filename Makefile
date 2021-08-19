@@ -42,7 +42,7 @@ install: all
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
 	mkdir -p ${DESTDIR}${MANPREFIX}/man1
 
-	[ ! "$(ls /sys/class/power_supply)" ] && cp -r datebar_desktop ${DESTDIR}${PREFIX}/bin/datebar || cp -r datebar_laptop ${DESTDIR}${PREFIX}/bin/datebar
+	[ ! "$(ls /sys/class/power_supply/BAT0)" ] && cp -r datebar_laptop ${DESTDIR}${PREFIX}/bin/datebar || cp -r datebar_desktop ${DESTDIR}${PREFIX}/bin/datebar
 	cp -r fonts/w95 ${FONTPATH}
 	sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
