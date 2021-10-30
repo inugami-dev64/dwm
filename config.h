@@ -30,7 +30,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",       NULL,       NULL,       0,          1,           -1 },
 	{ "Firefox",    NULL,       NULL,       0,          0,           -1 },
-    { "mpv",        NULL,       NULL,       0,          1,           -1 }
+    { "mpv",        NULL,       NULL,       0,          1,           -1 },
+    { "Blender",    NULL,       NULL,       0,          1,           -1 }
 };
 
 /* layout(s) */
@@ -59,15 +60,15 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]           = { "dmenu_run", NULL };
-static const char *termcmd[]            = { "tabbed", "st", "-w", NULL };
+static const char *termcmd[]            = { "st", NULL };
 static const char *web_browser[]        = { "firefox", NULL };
 static const char *surf[]               = { "tabbed", "-c", "surf", "-e", NULL };
 static const char *vifm[]               = { "st", "-e", "vifmrun", NULL };
 static const char *htop[]               = { "st", "-e", "htop", NULL };
-static const char *kpcli[]              = { "st", "-e", "kpcli", "--kdb", "/home/karl/Documents/passwords.kdbx", NULL };
+static const char *kpcli[]              = { "st", "-e", "kpcli", "--kdb", "/mnt/drive0/Documents/passwords.kdbx", NULL };
 static const char *screen_shooter[]     = { "xfce4-screenshooter", NULL };
-static const char *vol_down[]           = { "amixer", "-c", "0", "--", "sset", "Master", "2-", NULL };
-static const char *vol_up[]             = { "amixer", "-c", "0", "--", "sset", "Master", "2+", NULL };
+static const char *vol_down[]           = { "pamixer", "-d", "2", NULL };
+static const char *vol_up[]             = { "pamixer", "-i", "2", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
