@@ -65,7 +65,7 @@ static const char *web_browser[]        = { "firefox", NULL };
 static const char *surf[]               = { "tabbed", "-c", "surf", "-e", NULL };
 static const char *vifm[]               = { "st", "-e", "vifmrun", NULL };
 static const char *htop[]               = { "st", "-e", "htop", NULL };
-static const char *kpcli[]              = { "st", "-e", "kpcli", "--kdb", "/mnt/drive0/Documents/passwords.kdbx", NULL };
+static const char *kpcli[]              = { "st", "-e", "kpcli", "--kdb", "/mnt/raid_pt/Documents/passwords.kdbx", NULL };
 static const char *screen_shooter[]     = { "xfce4-screenshooter", NULL };
 static const char *vol_down[]           = { "pamixer", "-d", "2", NULL };
 static const char *vol_up[]             = { "pamixer", "-i", "2", NULL };
@@ -93,7 +93,7 @@ static Key keys[] = {
     { MODKEY|ControlMask,           XK_j,               moveresize,         {.v = "0x 0y 0w 40h"} },
     { MODKEY|ControlMask,           XK_k,               moveresize,         {.v = "0x 0y 0w -40h"} },
     { MODKEY|ControlMask,           XK_l,               moveresize,         {.v = "0x 0y 40w 0h"} },
-
+ 
     /// Window moving shortcuts
     { MODKEY|ShiftMask,             XK_h,               moveresize,         {.v = "-40x 0y 0w 0h"} },
     { MODKEY|ShiftMask,             XK_j,               moveresize,         {.v = "0x 40y 0w 0h"} },
