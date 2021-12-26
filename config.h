@@ -1,7 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-#define PASSWORD_DB
-
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 35;       /* snap pixel */
