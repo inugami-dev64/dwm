@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#define PASSWORD_DB
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 35;       /* snap pixel */
@@ -61,11 +63,12 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]           = { "dmenu_run", NULL };
 static const char *termcmd[]            = { "st", NULL };
-static const char *web_browser[]        = { "firefox", NULL };
+static const char *web_browser[]        = { "chromium", NULL };
 static const char *surf[]               = { "tabbed", "-c", "surf", "-e", NULL };
+static const char *man[]                = { "st", "-e", "man", "dwm", NULL };
 static const char *vifm[]               = { "st", "-e", "vifmrun", NULL };
 static const char *htop[]               = { "st", "-e", "htop", NULL };
-static const char *kpcli[]              = { "st", "-e", "kpcli", "--kdb", "/mnt/raid_pt/Documents/passwords.kdbx", NULL };
+static const char *kpcli[]              = { "st", "-e", "kpcli", "--kdb", PASSWORD_DB, NULL };
 static const char *screen_shooter[]     = { "xfce4-screenshooter", NULL };
 static const char *vol_down[]           = { "pamixer", "-d", "2", NULL };
 static const char *vol_up[]             = { "pamixer", "-i", "2", NULL };
@@ -80,6 +83,7 @@ static Key keys[] = {
     { MODKEY,                       XK_p,               spawn,              {.v = htop} },
     { MODKEY,                       XK_q,               spawn,              {.v = kpcli} },
 	{ MODKEY,			            XK_s,               spawn,	            {.v = screen_shooter } },
+    { MODKEY,                       XK_m,               spawn,              {.v = man } },
 	{ MODKEY,			            XK_period,          spawn,	            {.v = vol_up} },
 	{ MODKEY,			            XK_comma,           spawn,	            {.v = vol_down } },
 	{ MODKEY,                       XK_b,               togglebar,          {0} },

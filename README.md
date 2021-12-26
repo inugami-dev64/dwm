@@ -55,6 +55,7 @@ Windows can be moved using Super + mouse dragging or via following shortcuts:
 
 * Super + Period - volume up (requires pamixer)  
 * Super + Comma - volume down (requires pamixer)  
+* Super + q - run kpcli (requires kpcli)
 * Super + r - run program (requires dmenu)
 * Super + Shift + Enter - spawn new terminal window (requires st)  
 * Super + i - open webbrowser (requires Chromium)
@@ -64,5 +65,8 @@ Windows can be moved using Super + mouse dragging or via following shortcuts:
 
 
 ## Building
-Make sure that Xlib headers are installed  
-`# make clean install`
+Building dwm is done with following command:  
+`# make PASSWORD_DB=<path-to-keepass-db>`  
+
+Installing dwm can be done with:  
+`# make install`
